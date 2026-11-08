@@ -1,4 +1,4 @@
-const CACHE = 'drp-platform-v1';
+const CACHE = 'drp-platform-v2';
 const ASSETS = [
   '/',
   '/index.html',
@@ -42,7 +42,12 @@ const ASSETS = [
 ];
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(ASSETS)));
+  event.waitUntil(caches.open(CACHE).then((cache) => Promise.all(ASSETS.map((path) =>
+    fetch(new Request(path, { cache: 'reload' })).then((response) => {
+      if (!response.ok) throw new Error('cache ' + path);
+      return cache.put(path, response);
+    })
+  ))));
   self.skipWaiting();
 });
 
