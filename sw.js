@@ -1,4 +1,4 @@
-const CACHE = 'drp-platform-v3';
+const CACHE = 'drp-platform-v4';
 const ASSETS = [
   '/',
   '/index.html',
@@ -39,7 +39,8 @@ const ASSETS = [
   '/assets/illustrations/issue-28.png',
   '/assets/illustrations/issue-29.png',
   '/assets/illustrations/issue-30.png',
-  '/assets/illustrations/issue-31.png'
+  '/assets/illustrations/issue-31.png',
+  '/assets/illustrations/issue-32.png'
 ];
 
 self.addEventListener('install', (event) => {
