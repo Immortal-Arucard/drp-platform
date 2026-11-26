@@ -1,4 +1,4 @@
-const CACHE = 'drp-platform-v9';
+const CACHE = 'drp-platform-v10';
 const ASSETS = [
   '/',
   '/index.html',
